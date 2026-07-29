@@ -1,4 +1,4 @@
-# Greenlight
+# Greenlight 🟢
 
 Greenlight is a tiny single-file web app that waits for a target URL to become reachable and then redirects the browser to it.
 
