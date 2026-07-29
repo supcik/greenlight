@@ -1,0 +1,26 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: https://codeberg.org/fsfe/reuse-tool
+    rev: v6.2.0
+    hooks:
+      - id: reuse
+
+  - repo: local
+    hooks:
+      - id: format-check
+        name: prettier format check
+        entry: npm run format:check
+        language: system
+        pass_filenames: false
+
+      - id: lint
+        name: eslint lint
+        entry: npm run lint
+        language: system
+        pass_filenames: false

@@ -1,0 +1,14 @@
+version = 1
+
+[[annotations]]
+path = [
+    ".gitignore",
+    ".pre-commit-config.yaml",
+    "index.html",
+    "package-lock.json",
+    "package.json",
+    "vite.config.ts",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Jacques Supcik <jacques@supcik.net>"
+SPDX-License-Identifier = "MIT"
