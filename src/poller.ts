@@ -37,14 +37,16 @@ async function startAutomaticMonitoring(
   loaderElement: HTMLElement,
 ): Promise<void> {
   const pollIntervalMs = 2000;
-  const startedAt = Date.now();
+  let elapsedSeconds = 0;
   const updateElapsedTime = (): void => {
-    const elapsedSeconds = Math.floor((Date.now() - startedAt) / 1000);
     const minutes = String(Math.floor(elapsedSeconds / 60)).padStart(2, "0");
     const seconds = String(elapsedSeconds % 60).padStart(2, "0");
     statusElement.innerText = `Connecting... ${minutes}:${seconds}`;
   };
-  const timerId = window.setInterval(updateElapsedTime, 1000);
+  const timerId = window.setInterval(() => {
+    elapsedSeconds += 1;
+    updateElapsedTime();
+  }, 1000);
 
   updateElapsedTime();
   loaderElement.style.display = "block";
